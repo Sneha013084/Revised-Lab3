@@ -14,15 +14,6 @@ This project is a simple task management application built using React and TypeS
 
                       Due Date
 
-## I created:
-
-List of tasks displayed with all their details
-
-Change task status using a dropdown menu
-
-Change task priority (optional improvement)
-
-Delete a task
 
 ## index.tsx
 
@@ -31,6 +22,53 @@ Added tpescript types for - Status => Pending, inprogress and completed
 Interface types for tasks
 
 Props for tasklist component and taskfilter component.
+
+## Taskfilter component
+
+## Defined Component Props Using TypeScript Interface
+
+I defined a TaskFilterProps interface that specifies the expected props:
+
+statusFilter: current selected task status filter.
+
+priorityFilter: current selected task priority filter.
+
+onStatusFilterChange: callback function to update the status filter.
+
+onPriorityFilterChange: callback function to update the priority filter.
+
+## I created two drop downs for status and priority
+
+Filter tasks by status with options:
+
+          All (no filter)
+
+          Pending
+
+          In Progress
+
+          Completed
+
+Filter tasks by priority with options:
+
+        All (no filter)
+
+        Low
+
+        Medium
+
+        High
+
+## Handled User Selection Changes
+
+Each dropdown has an onChange event handler that - Extracts the selected value from the event.
+
+Calls the corresponding callback prop (onStatusFilterChange or onPriorityFilterChange) with the new selected value, properly cast to the expected string literal types.
+
+## Added an “All” Option
+
+To allow users to clear filters, an "All" option is included in both dropdowns, represented by a blank space (" ").
+
 
 ## tasklist.tsx
 
