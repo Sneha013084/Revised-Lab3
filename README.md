@@ -72,11 +72,28 @@ To allow users to clear filters, an "All" option is included in both dropdowns, 
 
 ## tasklist.tsx
 
-Added a map function to loop through each task in that task array. 
+The TaskList component is responsible for displaying a list of tasks.
+It receives task data and callback functions via props, and renders each task using the TaskItem component.
+
+Receives a list of tasks via the tasks prop.
+
+Maps through the task list and renders each task using the TaskItem component.
+
+Passes callback functions (onStatusChange, onPriorityChange, onDelete) to each TaskItem so user interactions can trigger updates.
+
+
+Handles empty list gracefully by showing a "No tasks found" message if the task list is empty.
 
 Created a container foir each task and key helped to keep track the items.
 
 Displays task details like title, description, status, priority, and due date.
+filteredTasks: the list of tasks filtered based on user selection.
+
+handleStatusChange: function to update a task's status.
+
+handlePriorityChange: function to update a task's priority.
+
+handleDelete: function to remove a task.
 
 Added a dropdown to change the status of the task. It triggers the onStatusChange function passed via props.
 
